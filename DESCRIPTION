@@ -1,0 +1,9 @@
+Package: asosi
+Title: Get BOM Ice Imagery
+Version: 0.0.0.9000
+Authors@R: person("Michael", "Sumner", email = "mdsumner@gmail.com", role = c("aut", "cre"))
+Description: Get sea ice imagery from the Bureau of Meteorology. 
+Depends: R (>= 3.2.1)
+License: What license is it under?
+LazyData: true
+Depends: raster, rgdal
