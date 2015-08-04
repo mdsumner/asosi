@@ -3,7 +3,9 @@ Obtain Antarctic and Southern Ocean Sea Ice imagery from the BOM
 
 This is a rough prototype and only some of the parameters are built in and generalized properly. Work in progress. 
 
-Only Durville will work for now . . .
+Only D'Urville will work for now. 
+
+Proof that D'Urville does work: 
 
 ```R
 library(asosi)
