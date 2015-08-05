@@ -24,8 +24,9 @@ This is a rough prototype and only some of the parameters are built in and gener
 
 ## TODO
 
+* allow ability to put .gfw and .prj (or .vrt) next to original GIF
 * Allow control over which image (9D, 8D, 7D, etc.)
-* remove dependence on rgdal by hardcoding projected control points in
+* remove dependence on rgdal by hardcoding projected control points into package
 * build more visualization examples 
 
 

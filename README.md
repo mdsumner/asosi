@@ -6,7 +6,13 @@ Obtain Antarctic and Southern Ocean Sea Ice imagery from the BOM
 
 This is a rough prototype and only some of the parameters are built in and generalized properly. Work in progress.
 
-Only some regions work for now.
+TODO
+----
+
+-   allow ability to put .gfw and .prj (or .vrt) next to original GIF
+-   Allow control over which image (9D, 8D, 7D, etc.)
+-   remove dependence on rgdal by hardcoding projected control points into package
+-   build more visualization examples
 
 Installation
 ============
