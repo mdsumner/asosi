@@ -27,7 +27,7 @@ data(countriesHigh)
 library(rgdal)
 ant <- subset(countriesHigh, SOVEREIGNT == "Antarctica")
 library(graticule)
-durv <- getbom(as.Date("2015-07-30"), region = "durville")
+durv <- asosi(as.Date("2015-07-30"), region = "durville")
 #> Warning in download.file(fname, tfile, mode = "wb"): cannot open: HTTP
 #> status was '404 Not Found'
 durvmap <- spTransform(ant, projection(durv))
@@ -42,20 +42,20 @@ plot(durv, addfun = function() {plot(durvmap, add = TRUE); plot(durvgrat, add = 
 
 regions <- c(
     "casey", "davis", "durville", "mawson", "shackleton", "terranova",
-    "westice", "pragnhild", "enderby", "capeadare", "sabrina"
-  )[1:4]
+    "westice", "ragnhild", "enderby", "capeadare", "sabrina"
+  )
 for (jj in seq_along(regions)) {
-  simap <- getbom(region = regions[jj])
+  simap <- asosi(region = regions[jj])
   elx <- extent(projectExtent(simap, "+proj=longlat +ellps=WGS84"))
   lon <- seq((xmin(elx) %/% 5) * 5, ((xmax(elx) %/% 5) + 1) * 5, by = 5)
   lat <- seq((ymin(elx) %/% 2) * 2, (ymax(elx) %/% 2 + 1) * 2, by = 2)
   ## put this in the function as a return property
   date <- as.Date(paste(format(Sys.Date(), "%Y"), substr(basename(filename(simap)), 10, 13)), "%Y %m%d")
   map <- spTransform(ant, projection(simap))
-  grat <- graticule(lon, lat, proj = projection(simap), nverts = 800)
+  grat <- graticule(lon, lat, proj = projection(simap), nverts = 80)
   plot(simap, addfun = function() {plot(map, add = TRUE); plot(grat, add = TRUE)}, maxpixels = ncell(simap))
   title(sprintf("%s %s", regions[jj], format(date)), line = -1.5, bg = "grey")
 }
 ```
 
-![](readmefigs/README-unnamed-chunk-3-3.png) ![](readmefigs/README-unnamed-chunk-3-4.png) ![](readmefigs/README-unnamed-chunk-3-5.png) ![](readmefigs/README-unnamed-chunk-3-6.png) ![](readmefigs/README-unnamed-chunk-3-7.png) ![](readmefigs/README-unnamed-chunk-3-8.png) ![](readmefigs/README-unnamed-chunk-3-9.png) ![](readmefigs/README-unnamed-chunk-3-10.png)
+![](readmefigs/README-unnamed-chunk-3-3.png) ![](readmefigs/README-unnamed-chunk-3-4.png) ![](readmefigs/README-unnamed-chunk-3-5.png) ![](readmefigs/README-unnamed-chunk-3-6.png) ![](readmefigs/README-unnamed-chunk-3-7.png) ![](readmefigs/README-unnamed-chunk-3-8.png) ![](readmefigs/README-unnamed-chunk-3-9.png) ![](readmefigs/README-unnamed-chunk-3-10.png) ![](readmefigs/README-unnamed-chunk-3-11.png) ![](readmefigs/README-unnamed-chunk-3-12.png) ![](readmefigs/README-unnamed-chunk-3-13.png) ![](readmefigs/README-unnamed-chunk-3-14.png) ![](readmefigs/README-unnamed-chunk-3-15.png) ![](readmefigs/README-unnamed-chunk-3-16.png) ![](readmefigs/README-unnamed-chunk-3-17.png) ![](readmefigs/README-unnamed-chunk-3-18.png) ![](readmefigs/README-unnamed-chunk-3-19.png) ![](readmefigs/README-unnamed-chunk-3-20.png) ![](readmefigs/README-unnamed-chunk-3-21.png) ![](readmefigs/README-unnamed-chunk-3-22.png) ![](readmefigs/README-unnamed-chunk-3-23.png) ![](readmefigs/README-unnamed-chunk-3-24.png)

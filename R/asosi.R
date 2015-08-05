@@ -5,7 +5,7 @@
 #           shackleton = "IDTE9252/IDTE9252.0922.9D.gif",
 #           terranova = "IDTE9262/IDTE9262.0921.9D.gif",
 #           westice = "IDTE9272/IDTE9272.0922.9D.gif",
-#           pragnhild = "IDTE9282/IDTE9282.0922.1D.gif",
+#           ragnhild = "IDTE9282/IDTE9282.0922.1D.gif",
 #           enderby = "IDTE9412/IDTE9412.0921.9D.gif",
 #           capeadare = "IDTE9422/IDTE9422.0921.9D.gif",
 #           sabrina = "IDTE9462/IDTE9462.0922.9D.gif")
@@ -26,11 +26,11 @@
     )
   }
 #.regionnames <- c("casey", "davis", "durville", "mawson", "shackleton", "terranova",
-#                  "westice", "pragnhild", "enderby", "capeadare", "sabrina")
+#                  "westice", "ragnhild", "enderby", "capeadare", "sabrina")
 .regionindex <- function(name) {
   c(
     "casey" = "21", "davis" = "22", "durville" = "23", "mawson" = "24", "shackleton" = "25", "terranova" = "26",
-    "westice" = "27", "pragnhild" = "28", "enderby" = "41", "capeadare" = "42", "sabrina" = "46"
+    "westice" = "27", "ragnhild" = "28", "enderby" = "41", "capeadare" = "42", "sabrina" = "46"
   )[name]
 }
 .token <- function(idx) {
@@ -53,7 +53,30 @@
                            proj = .baseprj(148)), 
     mawson  =  .mkregion(238, 447, 77, 517,
                            60, 65, -68,-64,
-                           proj = .baseprj(64))
+                           proj = .baseprj(64)), 
+    shackleton  =  .mkregion(118, 783, 65, 491,
+                         90, 105, -68,-64,
+                         proj = .baseprj(97)) , 
+    terranova  =  .mkregion(181, 546, 27, 462,
+                             160, 175, -78,-74,
+                             proj = .baseprj(170)), 
+    westice  =  .mkregion(77, 496, 114, 571,
+                            80, 90, -68,-64,
+                            proj = .baseprj(88)), 
+    ragnhild  =  .mkregion(175, 908, 81, 755,
+                          10, 30, -72,-66,
+                          proj = .baseprj(23)), 
+    enderby  =  .mkregion(270, 887, 101, 763,
+                           40, 55, -70,-64,
+                           proj = .baseprj(49)), 
+    capeadare  =  .mkregion(167, 473, 70, 513,
+                          160, 170, -74,-70,
+                          proj = .baseprj(168))
+    , 
+    sabrina  =  .mkregion(118, 782, 66, 490,
+                            115, 130, -68,-64,
+                            proj = .baseprj(122))
+    
   )
   x$token <- .token(name)
   x
@@ -72,9 +95,9 @@
 #' \dontrun{
 #' dates <- Sys.Date() - c(1, 2, 3, 4, 5)
 #' for (i in seq_along(dates)) {
-#' r <- getbom(dates[i])
+#' r <- asosi(dates[i])
 #' writeRaster(r, sprintf("infrared%s.tif", format(dates[i])))
-#' r2 <- getbom(dates[i], band = "visible")
+#' r2 <- asosi(dates[i], band = "visible")
 #' writeRaster(r2, sprintf("visible%s.tif", format(dates[i])))
 #' }
 
@@ -84,10 +107,10 @@
 #'
 #' plot(r);llgridlines(temp)
 #' }
-getbom <-
+asosi <-
   function(date, region = c(
     "casey", "davis", "durville", "mawson", "shackleton", "terranova",
-    "westice", "pragnhild", "enderby", "capeadare", "sabrina"
+    "westice", "ragnhild", "enderby", "capeadare", "sabrina"
   ),
   
   band = c("infrared", "visible")) {
@@ -156,3 +179,56 @@ getbom <-
     
     stop("cannot find file at", fname, "or", gsub("3D", pp, fname))
   }
+
+
+
+## Casey
+##llpts <- cbind(c(105, 110), c(-66, -64))
+##centre <- "110"
+
+## Davis
+##llpts <- cbind(c(70, 80), c(-66, -68))
+##centre <- "76"
+
+## Durville
+##llpts <- cbind(c(140, 150), c(-68, -62))
+##centre <- "148"
+
+## Mawson
+##llpts <- cbind(c(55, 65), c(-68, -64))
+##centre <- "64"
+
+## Shackleton
+##llpts <- cbind(c(90, 105), c(-68, -64))
+##centre <- "97"
+
+## Terra Nova
+
+#llpts <- cbind(c(160, 175), c(-78, -74))
+#centre <- "170"
+
+## West Ice 
+##llpts <- cbind(c(80, 90), c(-68, -64))
+##centre <- 88 
+
+
+## ragnhild
+
+# llpts <- cbind(c(10, 30), c(-72, -66))
+# centre <- 23
+
+
+## Enderby
+##llpts <- cbind(c(35, 50), c(-70, -64))
+##centre <- 49
+
+
+## Cape Adare
+##llpts <- cbind(c(160, 170 ), c(-74,-70 ))
+##centre <- 168
+
+
+# ## Sabrina
+# llpts <- cbind(c(115, 130 ), c(-68,-64 ))
+# centre <- 122
+
