@@ -7,3 +7,4 @@ Depends: R (>= 3.2.1)
 License: What license is it under?
 LazyData: true
 Depends: raster, rgdal
+Suggests: rworldxtra
