@@ -58,7 +58,11 @@ for (jj in seq_along(regions)) {
 }
 ```
 
-![](readmefigs/README-unnamed-chunk-3-4.png)
+ 
+![](readmefigs/README-unnamed-chunk-3-4.png) 
+
 ![](readmefigs/README-unnamed-chunk-3-6.png) 
+
 ![](readmefigs/README-unnamed-chunk-3-8.png) 
+
 ![](readmefigs/README-unnamed-chunk-3-10.png)
