@@ -35,7 +35,7 @@ durvgrat <- graticule(seq(135, 160, by = 5), seq(-70, -60, by = 2), proj = proje
 plot(durv, addfun = function() {plot(durvmap, add = TRUE); plot(durvgrat, add = TRUE)}, maxpixels = ncell(durv))
 ```
 
- ![](readmefigs/README-unnamed-chunk-3-2.png)
+![](readmefigs/README-unnamed-chunk-3-1.png) ![](readmefigs/README-unnamed-chunk-3-2.png)
 
 ``` r
 #writeRaster(durv, gsub(".gif", ".tif", basename(durv)))
@@ -58,11 +58,4 @@ for (jj in seq_along(regions)) {
 }
 ```
 
- 
-![](readmefigs/README-unnamed-chunk-3-4.png) 
-
-![](readmefigs/README-unnamed-chunk-3-6.png) 
-
-![](readmefigs/README-unnamed-chunk-3-8.png) 
-
-![](readmefigs/README-unnamed-chunk-3-10.png)
+![](readmefigs/README-unnamed-chunk-3-3.png) ![](readmefigs/README-unnamed-chunk-3-4.png) ![](readmefigs/README-unnamed-chunk-3-5.png) ![](readmefigs/README-unnamed-chunk-3-6.png) ![](readmefigs/README-unnamed-chunk-3-7.png) ![](readmefigs/README-unnamed-chunk-3-8.png) ![](readmefigs/README-unnamed-chunk-3-9.png) ![](readmefigs/README-unnamed-chunk-3-10.png)
