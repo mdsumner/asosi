@@ -1,16 +1,3 @@
-#   fs <- c(casey = "IDTE9212/IDTE9212.0922.9D.gif",
-#           davis = "IDTE9222/IDTE9222.0922.9D.gif",
-#           durville = "IDTE9232/IDTE9232.0921.9D.gif",
-#           mawson = "IDTE9242/IDTE9242.0921.9D.gif",
-#           shackleton = "IDTE9252/IDTE9252.0922.9D.gif",
-#           terranova = "IDTE9262/IDTE9262.0921.9D.gif",
-#           westice = "IDTE9272/IDTE9272.0922.9D.gif",
-#           ragnhild = "IDTE9282/IDTE9282.0922.1D.gif",
-#           enderby = "IDTE9412/IDTE9412.0921.9D.gif",
-#           capeadare = "IDTE9422/IDTE9422.0921.9D.gif",
-#           sabrina = "IDTE9462/IDTE9462.0922.9D.gif")
-
-
 .baseprj <- function(clon) {
   sprintf(
     "+proj=stere +lon_0=%f +lat_0=-90 +lat_ts=-70 +k=1 +x_0=0 +y_0=0 +a=6378273 +b=6356889.449 +units=m +no_defs",
@@ -179,56 +166,4 @@ asosi <-
     
     stop("cannot find file at", fname, "or", gsub("3D", pp, fname))
   }
-
-
-
-## Casey
-##llpts <- cbind(c(105, 110), c(-66, -64))
-##centre <- "110"
-
-## Davis
-##llpts <- cbind(c(70, 80), c(-66, -68))
-##centre <- "76"
-
-## Durville
-##llpts <- cbind(c(140, 150), c(-68, -62))
-##centre <- "148"
-
-## Mawson
-##llpts <- cbind(c(55, 65), c(-68, -64))
-##centre <- "64"
-
-## Shackleton
-##llpts <- cbind(c(90, 105), c(-68, -64))
-##centre <- "97"
-
-## Terra Nova
-
-#llpts <- cbind(c(160, 175), c(-78, -74))
-#centre <- "170"
-
-## West Ice 
-##llpts <- cbind(c(80, 90), c(-68, -64))
-##centre <- 88 
-
-
-## ragnhild
-
-# llpts <- cbind(c(10, 30), c(-72, -66))
-# centre <- 23
-
-
-## Enderby
-##llpts <- cbind(c(35, 50), c(-70, -64))
-##centre <- 49
-
-
-## Cape Adare
-##llpts <- cbind(c(160, 170 ), c(-74,-70 ))
-##centre <- 168
-
-
-# ## Sabrina
-# llpts <- cbind(c(115, 130 ), c(-68,-64 ))
-# centre <- 122
 
