@@ -39,6 +39,9 @@
 .regions <- function(name) {
   x <- switch(
     name,
+    casey  =  .mkregion(178, 401, 181, 408,
+                           105, 110,-66,-64,
+                           proj = .baseprj(110)), 
     davis = .mkregion(
      # xmin = 135, xmax = 562, ymin = 187, ymax = 394,
       xmin = 160, xmax = 575, ymin = 179, ymax = 402,

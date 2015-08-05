@@ -4,8 +4,9 @@
 \alias{getbom}
 \title{Title}
 \usage{
-getbom(date, region = c("DavisPrydz", "Durville"), band = c("infrared",
-  "visible"))
+getbom(date, region = c("casey", "davis", "durville", "mawson", "shackleton",
+  "terranova", "westice", "pragnhild", "enderby", "capeadare", "sabrina"),
+  band = c("infrared", "visible"))
 }
 \arguments{
 \item{date}{}
