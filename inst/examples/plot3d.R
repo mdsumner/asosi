@@ -37,19 +37,24 @@ library(RTriangle)
 #data(countriesLow)
 w <- subset(wrld_simpl, NAME == "Antarctica")
 map <- gris(w)
-p <- mkpslg(map)
-tr <- RTriangle::triangulate(p)
-tri <- rgl::tetrahedron3d()
-tri$vb <- t(cbind(llh2xyz(cbind(tr$P, 0)),1))
-tri$it <- t(tr$T)
-#shade3d(tri, col = "grey", alpha = 0.1)
-wire3d(tri)
+pp <- "+proj=laea +ellps=WGS84 +lat_0=-90"
 g <- local({
-  xyz <- llh2xyz(map$v %>% select(x, y) %>% as.matrix %>% cbind(0))
+  #xyz <- llh2xyz(map$v %>% select(x, y) %>% as.matrix %>% cbind(0))
+  xy <- project(map$v %>% dplyr::select(x, y) %>% as.matrix, pp)
   map1 <- map
-  map1$v$X <- xyz[,1]
-  map1$v$Y <- xyz[,2]
-  map1$v$Z <- xyz[,3]
+  map1$v$x <- xy[,1]
+  map1$v$y <- xy[,2]
+  
   map1
 })
+p <- mkpslg(g)
+rgl.pop()
+tr <- RTriangle::triangulate(p, a = 2e10)
+tri <- rgl::tetrahedron3d()
+tri$vb <- t(cbind(llh2xyz(cbind(project(tr$P, pp, inv = TRUE), 0)),1))
+
+tri$it <- t(tr$T)
+#shade3d(tri, col = "grey", alpha = 0.1)
+wire3d(tri, col = "red")
+
 
