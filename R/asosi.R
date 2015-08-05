@@ -50,7 +50,10 @@
     ),
     durville  =  .mkregion(279, 704, 101, 775,
                            140, 150,-68,-62,
-                           proj = .baseprj(148))
+                           proj = .baseprj(148)), 
+    mawson  =  .mkregion(238, 447, 77, 517,
+                           60, 65, -68,-64,
+                           proj = .baseprj(64))
   )
   x$token <- .token(name)
   x
