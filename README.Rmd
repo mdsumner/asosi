@@ -31,6 +31,8 @@ Install with devtools.
 devtools::install_github("mdsumner/asosi")
 ```
 
+# Examples
+
 ```{r,message=FALSE,echo=FALSE}
 library(asosi)
 library(rworldxtra)
@@ -62,7 +64,7 @@ for (jj in seq_along(regions)) {
   lon <- seq((xmin(elx) %/% 5) * 5, ((xmax(elx) %/% 5) + 1) * 5, by = 5)
   lat <- seq((ymin(elx) %/% 2) * 2, (ymax(elx) %/% 2 + 1) * 2, by = 2)
   ## put this in the function as a return property
-  date <- as.Date(paste(format(Sys.Date(), "%Y"), substr(basename(filename(durv)), 10, 13)), "%Y %m%d")
+  date <- as.Date(paste(format(Sys.Date(), "%Y"), substr(basename(filename(simap)), 10, 13)), "%Y %m%d")
   map <- spTransform(ant, projection(simap))
   grat <- graticule(lon, lat, proj = projection(simap), nverts = 800)
   plot(simap, addfun = function() {plot(map, add = TRUE); plot(grat, add = TRUE)}, maxpixels = ncell(simap))

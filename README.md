@@ -17,8 +17,8 @@ Install with devtools.
 devtools::install_github("mdsumner/asosi")
 ```
 
-Examples 
-============
+Examples
+========
 
 ``` r
 library(asosi)
@@ -35,7 +35,7 @@ durvgrat <- graticule(seq(135, 160, by = 5), seq(-70, -60, by = 2), proj = proje
 plot(durv, addfun = function() {plot(durvmap, add = TRUE); plot(durvgrat, add = TRUE)}, maxpixels = ncell(durv))
 ```
 
-![](readmefigs/README-unnamed-chunk-3-2.png)
+ ![](readmefigs/README-unnamed-chunk-3-2.png)
 
 ``` r
 #writeRaster(durv, gsub(".gif", ".tif", basename(durv)))
@@ -50,7 +50,7 @@ for (jj in seq_along(regions)) {
   lon <- seq((xmin(elx) %/% 5) * 5, ((xmax(elx) %/% 5) + 1) * 5, by = 5)
   lat <- seq((ymin(elx) %/% 2) * 2, (ymax(elx) %/% 2 + 1) * 2, by = 2)
   ## put this in the function as a return property
-  date <- as.Date(paste(format(Sys.Date(), "%Y"), substr(basename(filename(durv)), 10, 13)), "%Y %m%d")
+  date <- as.Date(paste(format(Sys.Date(), "%Y"), substr(basename(filename(simap)), 10, 13)), "%Y %m%d")
   map <- spTransform(ant, projection(simap))
   grat <- graticule(lon, lat, proj = projection(simap), nverts = 800)
   plot(simap, addfun = function() {plot(map, add = TRUE); plot(grat, add = TRUE)}, maxpixels = ncell(simap))
@@ -58,4 +58,7 @@ for (jj in seq_along(regions)) {
 }
 ```
 
- ![](readmefigs/README-unnamed-chunk-3-4.png) ![](readmefigs/README-unnamed-chunk-3-6.png)  ![](readmefigs/README-unnamed-chunk-3-8.png)  ![](readmefigs/README-unnamed-chunk-3-10.png)
+![](readmefigs/README-unnamed-chunk-3-4.png)
+![](readmefigs/README-unnamed-chunk-3-6.png) 
+![](readmefigs/README-unnamed-chunk-3-8.png) 
+![](readmefigs/README-unnamed-chunk-3-10.png)
