@@ -24,6 +24,13 @@
   sprintf("IDTE9%s", .regionindex(idx))
 }
 .regions <- function(name) {
+
+# MOSAIC at http://avhrr.acecrc.org.au/mosaics/
+## projection  "+proj=stere +lon_0=105 +lat_0=-90 +lat_ts=-70 +k=1 +x_0=0 +y_0=0 +a=6378273 +b=6356889.449 +units=m +no_defs"
+## projected c(xmin = -2502020, xmax = 2492591, ymin = 318842, ymax = 4067990)
+## pixel c(365, 1060, 34, 578)
+## lonlat c(40, 140, -80, -60)
+
   x <- switch(
     name,
     casey  =  .mkregion(178, 401, 181, 408,
