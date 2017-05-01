@@ -3,8 +3,7 @@ Title: Get BOM Ice Imagery
 Version: 0.0.0.9000
 Authors@R: person("Michael", "Sumner", email = "mdsumner@gmail.com", role = c("aut", "cre"))
 Description: Get sea ice imagery from the Bureau of Meteorology. 
-Depends: R (>= 3.2.1)
-License: What license is it under?
+Depends: R (>= 3.2.1), raster, rgdal
+License: GPL-3
 LazyData: true
-Depends: raster, rgdal
-Suggests: rworldxtra
+Suggests: graticule, rgdal, rworldxtra
